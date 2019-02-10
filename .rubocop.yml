@@ -1,5 +1,4 @@
 AllCops:
-  RunRailsCops: true
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
@@ -8,6 +7,9 @@ AllCops:
    - 'db/seeds.rb'
    - 'db/schema.rb'
    - 'vendor/bundle/**/*'
+
+Rails:
+  Enabled: true
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
@@ -45,6 +47,7 @@ Style/BlockDelimiters:
     - uniq
     - git_source
     - its
+    - sequence
 
 Style/FrozenStringLiteralComment:
   Enabled: false
