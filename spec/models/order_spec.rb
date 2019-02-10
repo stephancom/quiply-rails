@@ -67,4 +67,23 @@ RSpec.describe Order, type: :model do
       expect(order999.order_num).to eq(999)
     end
   end
+
+  describe 'tabulation' do
+    include_context 'four users with thirteen orders'
+
+    it 'count_orders_by_week returns right number of weeks' do
+      expect(Order.count_orders_by_week).to have(4).items
+    end
+
+    it 'count_orders_by_week should return the right data' do
+      expect(Order.count_orders_by_week).to eq([{ orderers: 2, first_orders: 2 },
+                                                { orderers: 2, first_orders: 1 },
+                                                { orderers: 3, first_orders: 1 },
+                                                { orderers: 1, first_orders: 0 }])
+    end
+
+    it 'count_orders_by_week limits weeks' do
+      expect(Order.count_orders_by_week(2)).to have(2).items
+    end
+  end
 end
