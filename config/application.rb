@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module QuiplyRails
   class Application < Rails::Application
-
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
@@ -17,8 +16,10 @@ module QuiplyRails
         routing_specs: false,
         controller_specs: false,
         request_specs: false
-      g.fixture_replacement :factory_bot, dir: "spec/factories"
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
+
+    config.eager_load_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
