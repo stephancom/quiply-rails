@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: quiply_test
+  username: postgres
