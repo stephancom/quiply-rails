@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Old:
+  = @order.old_id
+p
+  strong Order num:
+  = @order.order_num
+p
+  strong User:
+  = @order.user_id
+
+=> link_to 'Edit', edit_order_path(@order)
+'|
+=< link_to 'Back', orders_path
