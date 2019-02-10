@@ -11,6 +11,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+
+# needed for Quiply
+gem 'groupdate', '~> 4.1.0'
+gem 'ruby-progressbar', '~> 1.10.0'
+gem 'smarter_csv', '~> 1.2.6'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -45,6 +51,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'simplecov', '~> 0.16.1'
 end
 group :test do
   gem 'capybara'
