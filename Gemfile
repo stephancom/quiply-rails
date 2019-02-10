@@ -3,7 +3,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.3.0'
+ruby '2.5.1'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -21,7 +21,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.0'
 gem 'pg', '~> 0.18'
 gem 'slim-rails'
 group :development do
@@ -35,6 +35,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'rb-readline'
   gem 'spring-commands-rspec'
 end
 group :development, :test do
