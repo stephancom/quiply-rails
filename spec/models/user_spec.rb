@@ -34,7 +34,8 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'tabulate_new_by_join_week' do
+  # TODO move this into a request spec or something.
+  xdescribe 'tabulate_new_by_join_week' do
     include_context 'four users with thirteen orders'
 
     it 'should return the expected number of rows' do

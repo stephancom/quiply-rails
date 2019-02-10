@@ -1,0 +1,14 @@
+h1 Quiply Cohorts
+p Find me in app/views/cohorts/show.html.slim
+
+table
+  caption Quiply Cohorts
+  thead
+    tr
+      - @headings.each do |h|
+        th= h
+  tbody
+    - @rows.reverse.each do |r|
+      tr
+        - r.each do |c|
+          td= c

@@ -5,6 +5,10 @@ class Order < ApplicationRecord
 
   before_validation :set_next_order_num, if: :new_record?
 
+  # group orders selected by an ActiveRecord scope by week.
+  #
+  # @param weeks_count [Integer] how many weeks to include in columns.  Default: 8
+  # @return [Array] an array of hashes, each containing counts of orderers/first time orderers for that week
   def self.count_orders_by_week(weeks_count = 8)
     group_by_week(:created_at).count.first(weeks_count).map do |(week, _)|
       week_orders = where(created_at: week..(week + 1.week))

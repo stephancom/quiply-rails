@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'cohorts#show'
+
+  get 'cohorts/show'
   resources :orders
   resources :users
 end
