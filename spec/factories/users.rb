@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :user do
-    old_id { 1 }
+    sequence(:old_id, 1111) { |i| i }
   end
 end

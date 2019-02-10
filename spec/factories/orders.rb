@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :order do
-    old_id { 1 }
+    sequence(:old_id, 3333) { |i| i }
     order_num { 1 }
-    user_id { 1 }
+    user
   end
 end

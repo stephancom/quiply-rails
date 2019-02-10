@@ -50,6 +50,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'rspec-collection_matchers', '~> 1.1.0'
   gem 'rubocop'
   gem 'simplecov', '~> 0.16.1'
 end
