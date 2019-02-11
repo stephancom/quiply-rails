@@ -11,6 +11,11 @@ html
   body
     header
       == render 'layouts/navigation'
-    main[role="main"]
+    main.container[role="main"]
       == render 'layouts/messages'
       == yield
+      footer.footer.fixed-bottom
+        span.navbar-text
+          | courtesy of 
+          a href='http://stephan.com' stephan.com
+        = image_tag 'https://s3.amazonaws.com/share.stephan.com/gif/quip_toothbrush_tight.gif', class: 'img-fluid rounded float-right'

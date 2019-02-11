@@ -1,5 +1,8 @@
 // import the CSS framework
 // Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
+$theme-colors: (
+  primary: #C6EBCF
+) !default;
 @import "bootstrap";
 
 // make all images responsive by default
@@ -10,10 +13,6 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
-  }
-
-body {
-  background-color: #C6EBCF;
 }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -46,4 +45,12 @@ main {
 section {
   @extend .row;
   margin-top: 20px;
+}
+
+footer {
+  background-color: white;
+  padding: 0.5em 1em;
+  img {
+    max-height: 48px;
+  }
 }
