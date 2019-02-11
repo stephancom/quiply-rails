@@ -1,3 +1,4 @@
+# represents an order
 class Order < ApplicationRecord
   belongs_to :user, primary_key: :old_id, inverse_of: :orders
   validates :order_num, uniqueness: { scope: :user_id }

@@ -18,7 +18,7 @@ class Import
   #
   # @param str [String] input datetime in nonstandard format: mm/dd/yyyy hh:mm:ss
   # @return [String] normalized time string in format: yyyy-mm-dd hh:mm:ss -0800
-  MMDDYY_HHMMSS_REGEXP = /(?<month>\d\d)\/(?<day>\d\d)\/(?<year>\d\d\d\d)\s(?<time>\d\d:\d\d:\d\d)/.freeze
+  MMDDYY_HHMMSS_REGEXP = %r{(?<month>\d\d)\/(?<day>\d\d)\/(?<year>\d\d\d\d)\s(?<time>\d\d:\d\d:\d\d)}.freeze
   def self.normalize_time(str)
     parts = str.match(MMDDYY_HHMMSS_REGEXP)
     "#{parts[:year]}-#{parts[:month]}-#{parts[:day]} #{parts[:time]} -0800"
