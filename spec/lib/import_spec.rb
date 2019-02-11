@@ -1,15 +1,7 @@
 RSpec.describe Import do
   describe 'time normalization' do
-    original_stderr = $stderr
-    original_stdout = $stdout
-    before(:all) do
-      # Redirect stderr and stdout
-      $stderr = File.open(File::NULL, 'w')
-      $stdout = File.open(File::NULL, 'w')
-    end
-    after(:all) do
-      $stderr = original_stderr
-      $stdout = original_stdout
+    around do |example|
+      suppress_stdout(&example)
     end
 
     let(:wrong_format) { '02/23/1968 06:30:00' }

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Order, type: :model do
   describe 'building' do
     let!(:order) { create(:order) }
