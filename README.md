@@ -16,13 +16,14 @@ Please output an html table or CSV that looks something like this. It should inc
 
 *(this is only an example. this is NOT real data)*
 
-|  Cohort     |  Users    |  0-7 days  |  7-14 days  | 14-21 days | ....
-|-------------|------------|-------------|------------|-------------|-------------
+```
+|  Cohort     |  Users      |  0-7 days   | 7-14 days  | 14-21 days  | ....
+|-------------|-------------|-------------|------------|-------------|-------------
 | 7/1-7/7     | 300 users   | 25% orderers (75)<br>25% 1st time (75) |             |            |
 | 6/24-6/30   | 200 users   | 15% orderers (30)<br>15% 1st time (30) | 5% orderers (10)<br>1.5% 1st time (3) |            | 
 | 6/17-6/23   | 100 users   | 30% orderers (30)<br>30% 1st time (30) | 10% orderers (10)<br>3% 1st time (3) |  15% orderers (15)<br>5% 1st time (5) | 
 | ... | ... | ... | ... | ... | ...
-
+```
 
 ### Data You Have
 
@@ -47,7 +48,6 @@ Please output an html table or CSV that looks something like this. It should inc
 * do order numbers count up from 1 for a given user? assuming yes.
 * not clear what "weeks back worth of cohorts" - assuming this is columns of order weeks, rather than history back of cohort groups, mainly because it seems like you wouldn't want unlimited columns, though it sounds like you're asking to limit the number of rows?
 * I'm leaving cells blank where there are no sales - seems more readable
-
 
 
 # build notes

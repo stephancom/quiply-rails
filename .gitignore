@@ -95,3 +95,7 @@ Gemfile.lock
 # rspec failure tracking
 .rspec_status
 /Gemfile.lock
+
+# documentation
+.yardoc
+doc/
