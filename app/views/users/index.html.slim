@@ -1,20 +1,21 @@
-h1 Listing users
+h1
+  .float-right= link_to 'New User', new_user_path, class: %w[btn btn-sm btn-primary]
+  | Listing users
 
 table.table
   thead.thead-dark
     tr
-      th Old
-      th
-      th
+      th Old ID
       th
 
   tbody
     - @users.each do |user|
       tr
         td = user.old_id
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete
+        td.actions.text-right
+          = link_to 'Show', user, class: %w[btn btn-sm btn-primary]
+          = link_to 'Edit', edit_user_path(user), class: %w[btn btn-sm btn-secondary]
+          = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete, class: %w[btn btn-sm btn-danger]
 
 br
 

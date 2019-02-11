@@ -6,13 +6,13 @@
         - @order.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :old_id
-    = f.number_field :old_id
-  .field
+  .field.form-group
+    = f.label :old_id, 'Old ID'
+    = f.number_field :old_id, class: 'form-control'
+  .field.form-group
     = f.label :order_num
-    = f.number_field :order_num
-  .field
+    = f.number_field :order_num, class: 'form-control'
+  .field.form-group
     = f.label :user_id
-    = f.number_field :user_id
-  .actions = f.submit
+    = f.number_field :user_id, class: 'form-control'
+  .actions.text-right= f.submit class: %w[btn btn-primary]

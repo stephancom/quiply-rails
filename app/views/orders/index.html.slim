@@ -1,13 +1,13 @@
-h1 Listing orders
+h1
+  .float-right= link_to 'New Order', new_order_path, class: %w[btn btn-sm btn-primary]
+  | Listing orders
 
 table.table
   thead.thead-dark
     tr
-      th Old
+      th Old ID
       th Order num
       th User
-      th
-      th
       th
 
   tbody
@@ -16,9 +16,10 @@ table.table
         td = order.old_id
         td = order.order_num
         td = order.user_id
-        td = link_to 'Show', order
-        td = link_to 'Edit', edit_order_path(order)
-        td = link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete
+        td.actions.text-right
+          = link_to 'Show', order, class: %w[btn btn-sm btn-primary]
+          = link_to 'Edit', edit_order_path(order), class: %w[btn btn-sm btn-secondary]
+          = link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete, class: %w[btn btn-sm btn-danger]
 
 br
 
