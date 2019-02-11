@@ -24,6 +24,5 @@ feature 'Cohorts Matrix' do
       | 10/26-11/2 | 1 users | 100% orderers (1) 100% 1st Time (1) | 100% orderers (1) 0% 1st Time (0) | 100% orderers (1) 0% 1st Time (0) |                                  |
     EOTABLE
 
-    # save_and_open_page
   end
 end

@@ -4,10 +4,22 @@ table
   caption Quiply Cohorts
   thead
     tr
-      - @headings.each do |h|
-        th= h
+      th Cohort
+      th Users
+      - @week_cols.times do |w|
+        th= relative_week(w)
   tbody
-    - @rows.reverse.each do |r|
+    - @rows.each do |r|
       tr
-        - r.each do |c|
-          td= c
+        td= timespan_format(r[:timespan])
+        td #{r[:count]}&nbsp;users
+        - r[:weeks].each do |week|
+          td
+            - next if week.nil?
+            = number_to_percentage(week[:orderers] * 100 / r[:count], precision: 0)
+            | &nbsp;orderers&nbsp;(#{ week[:orderers] })
+            = ' '
+            = number_to_percentage(week[:first_orders] * 100 / r[:count], precision: 0)
+            | &nbsp;1st&nbsp;Time&nbsp;(#{ week[:first_orders] })
+
+

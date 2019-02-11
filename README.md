@@ -1,11 +1,8 @@
 # Quiply Rails [![Build Status](https://travis-ci.org/stephancom/quiply-rails.svg?branch=master)](https://travis-ci.org/stephancom/quiply-rails) [![Maintainability](https://api.codeclimate.com/v1/badges/b49cc671938dcc04f0c0/maintainability)](https://codeclimate.com/github/stephancom/quiply-rails/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b49cc671938dcc04f0c0/test_coverage)](https://codeclimate.com/github/stephancom/quiply-rails/test_coverage) [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-================
-
 
 ### Quip cohort challenge
 
 ## Spec
-### What we need
 
 Group users into week long cohorts based on the user's signup date. For each cohort, calculate:
 

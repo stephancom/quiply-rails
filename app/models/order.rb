@@ -5,6 +5,14 @@ class Order < ApplicationRecord
 
   before_validation :set_next_order_num, if: :new_record?
 
+  # Finds orders for a user joining on a certain date or in a date range
+  # 
+  # @method for_user_joined_on(join_date)
+  # @scope class
+  # @param join_date [DateTime, Range] join date or range, including open-ended range
+  # @returns [Order]
+  scope :for_user_joined_on, -> (join_date) { joins(:user).where(users: { created_at: join_date }) }
+
   # group orders selected by an ActiveRecord scope by week.
   #
   # @param weeks_count [Integer] how many weeks to include in columns.  Default: 8
