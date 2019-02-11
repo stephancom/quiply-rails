@@ -1,0 +1,20 @@
+li.nav-item
+  a.nav-link.navbar_brand(href=users_path class=(:active if controller_name == 'users')) Users
+li.nav-item
+  a.nav-link.navbar_brand(href=orders_path class=(:active if controller_name == 'orders')) Orders
+li.nav-item.active
+  a.nav-link href="#" 
+    | Home
+    span.sr-only (current)
+li.nav-item
+  a.nav-link href="#"  Link
+li.nav-item.dropdown
+  a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+    | Dropdown
+  .dropdown-menu aria-labelledby="navbarDropdown" 
+    a.dropdown-item href="#"  Action
+    a.dropdown-item href="#"  Another action
+    .dropdown-divider
+    a.dropdown-item href="#"  Something else here
+li.nav-item
+  a.nav-link.disabled href="#"  Disabled

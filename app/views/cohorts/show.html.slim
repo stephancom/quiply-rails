@@ -1,25 +1,28 @@
 h1 Quiply Cohorts
 
-table
-  caption Quiply Cohorts
-  thead
-    tr
-      th Cohort
-      th Users
-      - @week_cols.times do |w|
-        th= relative_week(w)
-  tbody
-    - @rows.each do |r|
-      tr
-        td= timespan_format(r[:timespan])
-        td #{r[:count]}&nbsp;users
-        - r[:weeks].each do |week|
-          td
-            - next if week.nil?
-            = number_to_percentage(week[:orderers] * 100 / r[:count], precision: 0)
-            | &nbsp;orderers&nbsp;(#{ week[:orderers] })
-            = ' '
-            = number_to_percentage(week[:first_orders] * 100 / r[:count], precision: 0)
-            | &nbsp;1st&nbsp;Time&nbsp;(#{ week[:first_orders] })
+.container
+  .row
+    .col-12
+      table.table.table-hover.table-responsive
+        caption Quiply Cohorts
+        thead.thead-dark
+          tr
+            th Cohort
+            th Users
+            - @week_cols.times do |w|
+              th(scope='col')= relative_week(w)
+        tbody
+          - @rows.each do |r|
+            tr
+              td= timespan_format(r[:timespan])
+              td #{r[:count]}&nbsp;users
+              - r[:weeks].each do |week|
+                td
+                  - next if week.nil?
+                  = number_to_percentage(week[:orderers] * 100 / r[:count], precision: 0)
+                  | &nbsp;orderers&nbsp;(#{ week[:orderers] })
+                  = ' '
+                  = number_to_percentage(week[:first_orders] * 100 / r[:count], precision: 0)
+                  | &nbsp;1st&nbsp;Time&nbsp;(#{ week[:first_orders] })
 
 
