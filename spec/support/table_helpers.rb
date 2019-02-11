@@ -123,7 +123,7 @@ module TableHelpers
     xtable = document.xpath('//table').collect { |table| table.xpath('.//tr').collect { |row| row.xpath('.//th|td') } }
     in_order = options.delete(:ordered)
 
-    xtable.should contain_table(rows, in_order)
+    expect(xtable).to contain_table(rows, in_order)
   end
 end
 
