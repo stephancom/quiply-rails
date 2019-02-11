@@ -9,8 +9,8 @@ module CohortsHelper
     order_scope.count_orders_by_week(weeks_count).map do |w|
       # TODO: I18n
       <<~EOWEEK
-        #{to_percent(w[:orderers], users_count)} orderers (#{w[:orderers]})
-        #{to_percent(w[:first_orders], users_count)} 1st Time (#{w[:first_orders]})
+        #{number_to_percentage(w[:orderers] * 100 / users_count, precision: 0)} orderers (#{w[:orderers]})
+        #{number_to_percentage(w[:first_orders] * 100 / users_count, precision: 0)} 1st Time (#{w[:first_orders]})
       EOWEEK
     end
   end

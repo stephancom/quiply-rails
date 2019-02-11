@@ -16,15 +16,4 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(helper.timespan_format(span_la_ny)).to eq('11/1-1/2')
     end
   end
-
-  describe '#percentage' do
-    it { expect(helper.to_percent(1, 2)).to eq('50%') }
-    it { expect(helper.to_percent(25, 100)).to eq('25%') }
-    it { expect(helper.to_percent(22, 7)).to eq('314%') }
-    it { expect(helper.to_percent(-7, 22)).to eq('-32%') }
-    it { expect(helper.to_percent(99.44, 100, 2)).to eq('99.44%') }
-    it { expect(helper.to_percent(22.0, 7.0)).to eq('314%') }
-    it { expect(helper.to_percent(355.0, 113.0, 1)).to eq('314.2%') }
-    it { expect(helper.to_percent(355.0, 113.0, 3)).to eq('314.159%') }
-  end
 end

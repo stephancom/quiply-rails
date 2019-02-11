@@ -7,9 +7,4 @@ module ApplicationHelper
   def timespan_format(span)
     [span.first, span.last].map { |t| t.strftime('%-m/%-d') }.join('-')
   end
-
-  def to_percent(count, total, digits = 0)
-    # "#{((count * 100) / total).round(digits)}%"
-    number_to_percentage((count * 100) / total, precision: digits)
-  end
 end
