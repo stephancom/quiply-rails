@@ -33,25 +33,4 @@ RSpec.describe User, type: :model do
       end
     end
   end
-
-  # TODO move this into a request spec or something.
-  xdescribe 'tabulate_new_by_join_week' do
-    include_context 'four users with thirteen orders'
-
-    it 'should return the expected number of rows' do
-      expect(User.tabulate_new_by_join_week).to have(2).items
-    end
-
-    it 'should return the expected data' do
-      expect(User.tabulate_new_by_join_week).to eq([['10/26-11/2', '1 users',
-                                                     "100% orderers (1)\n100% 1st Time (1)\n",
-                                                     "100% orderers (1)\n0% 1st Time (0)\n",
-                                                     "100% orderers (1)\n0% 1st Time (0)\n"],
-                                                    ['11/2-11/9', '3 users',
-                                                     "33% orderers (1)\n33% 1st Time (1)\n",
-                                                     "33% orderers (1)\n33% 1st Time (1)\n",
-                                                     "66% orderers (2)\n33% 1st Time (1)\n",
-                                                     "33% orderers (1)\n0% 1st Time (0)\n"]])
-    end
-  end
 end
