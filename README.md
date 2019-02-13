@@ -49,6 +49,20 @@ Please output an html table or CSV that looks something like this. It should inc
 * not clear what "weeks back worth of cohorts" - assuming this is columns of order weeks, rather than history back of cohort groups, mainly because it seems like you wouldn't want unlimited columns, though it sounds like you're asking to limit the number of rows?
 * I'm leaving cells blank where there are no sales - seems more readable
 
+### seeding database
+
+```
+rake import:users\[filename.csv]
+rake import:orders\[filename.csv]
+```
+
+### deploy
+
+```
+heroku create your-quiply-app-name
+heroku buildpacks:set https://github.com/bundler/heroku-buildpack-bundler2
+git push heroku master
+```
 
 # build notes
 
